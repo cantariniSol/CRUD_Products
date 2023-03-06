@@ -3,24 +3,24 @@ import { CreateProductDto } from './dto/create_product.dto';
 import { UpdateProductDto } from './dto/update_product.dto';
 import { ProductsService } from './products.service';
 
-@Controller('products')
+@Controller('product')
 export class ProductsController {
     constructor(private productsService: ProductsService) { }
 
     //_______________CREAR PRODUCTO______________________
-    @Post()
+    @Post('/create')
     createProduct(@Body() newProduct: CreateProductDto) {
         return this.productsService.createProduct(newProduct);
     }
 
     //_______________LISTAR PRODUCTOS______________________
-    @Get()
+    @Get('/')
     getProducts() {
         return this.productsService.getProducts();
     }
 
     //_______________OBTENER UN PRODUCTO______________________
-    @Get(':id')
+    @Get('/:id')
     getProduct(@Param('id', ParseIntPipe) id: number) {
         // console.log(id);
         // console.log(typeof (id));
@@ -28,13 +28,13 @@ export class ProductsController {
     }
 
     //_______________ELIMINAR PRODUCTO______________________
-    @Delete(':id')
+    @Delete('/delete/:id')
     deleteProduct(@Param('id', ParseIntPipe) id: number) {
         return this.productsService.deleteProduct(id);
     }
 
     //_______________EDITAR PRODUCTO______________________
-    @Patch(':id')
+    @Patch('/update/:id')
     updateProduct(@Param('id', ParseIntPipe) id: number, @Body() product: UpdateProductDto) {
         return this.productsService.updateProduct(id, product);
     }
