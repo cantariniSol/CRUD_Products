@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProductFormComponent implements OnInit {
 
   product: Product = {
+    id: '',
     article: 0,
     name: '',
     category: '',
