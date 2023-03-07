@@ -31,12 +31,11 @@
                         </li>
                         
                     </ul>
-                    <button  class="btn btn-danger ml-4 pl-3 pr-3"
-                     (click)="deleteProduct(product.id)">
+                    <button  class="btn btn-danger ml-4 pl-3 pr-3">
                         Eliminar
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
-                    <button [routerLink]="['/product/edit', product.id]" class="btn btn-success ml-2 pl-4 pr-4">
+                    <button [routerLink]="['/product/edit']" class="btn btn-success ml-2 pl-4 pr-4">
                         Editar
                         <i class="fas fa-edit"></i>
                     </button>
