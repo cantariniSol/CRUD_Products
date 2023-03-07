@@ -1,1 +1,50 @@
-<p>product-list works!</p>
+<div class="card card-default border-dark">
+    <div class="card-header bg-dark">
+        <h5 class="card-title mt-2 text-white">
+            <i class="fas fa-boxes"></i>
+            Productos
+        </h5>
+    </div>
+        <div class="card-body bg-secondary">
+           <div *ngFor="let product of products" class="card card-body  border-dark mb-2">
+                <div class="row">
+                    <div class="col-md-4">
+                    <span class="badge bg-warning text-white ml-5 pl-5 pr-5 mb-2" style="font-size:20px;">Stock: <b>{{product.stock}}</b></span>
+                    <img [src]="product.image" class="card-img" style="border: 15px solid #E0DDAA; border-radius:10%">
+                    </div>
+                    <div class="col-md-8">
+                    <ul class=" mt-5">
+                        <li style="list-style:none">
+                        Artículo: <b>{{product.article}}</b>
+                        </li>
+                        <li style="list-style:none">
+                        Nombre: <b>{{product.name}}</b>
+                        </li>
+                        <li style="list-style:none">
+                        Categoría: <b>{{product.category}}</b>
+                        </li>
+                        <li style="list-style:none">
+                        Precio: $<b>{{product.price}}</b>
+                        </li>
+                        <li style="list-style:none">
+                        Precio de Venta: $<b>{{product.price_sale}}</b>
+                        </li>
+                        
+                    </ul>
+                    <button  class="btn btn-danger ml-4 pl-3 pr-3"
+                     (click)="deleteProduct(product.id)">
+                        Eliminar
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                    <button [routerLink]="['/product/edit', product.id]" class="btn btn-success ml-2 pl-4 pr-4">
+                        Editar
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+</div>
+

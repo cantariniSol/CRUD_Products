@@ -1,1 +1,56 @@
-<p>product-form works!</p>
+<div class="card card-default border-dark">
+    <div class="card-header bg-dark">
+        <h5 class="card-title mt-2 text-white">
+            <i class="fas fa-plus"></i>
+            Crear Producto
+        </h5>
+    </div>
+        <div class="card-body bg-secondary">
+            <form  (submit)="edit ? updateProduct() : submitProduct()">
+                <div class="row">
+                    <div class="col-6 mx-5">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Artículo</label>
+                            <input type="text" name="article" [(ngModel)]="product.article" class="form-control" placeholder="Artículo del Producto" autofocus>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Nombre</label>
+                            <input type="text" name="name" [(ngModel)]="product.name" class="form-control" placeholder="Nombre del Producto">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Categoría</label>
+                            <input type="text" name="category" [(ngModel)]="product.category" class="form-control" placeholder="Categoría del Producto">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Precio</label>
+                            <input type="text" name="price" [(ngModel)]="product.price" class="form-control" placeholder="Precio del Producto" >
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Pre. Venta</label>
+                            <input type="text" name="price_sale" [(ngModel)]="product.price_sale"  class="form-control" placeholder="Precio Venta del Próducto">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Stock</label>
+                            <input type="text" name="stock" [(ngModel)]="product.stock" class="form-control" placeholder="Artículo del Producto">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 mx-5">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label ">Imágen</label>
+                            <input type="text" name="image" [(ngModel)]="product.image" class="form-control" placeholder="Imágen del Producto">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-success btn-block">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+
